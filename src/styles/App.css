@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: bisque;
+  color: #333;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.header {
+  background-color: #fff;
+  padding: 1.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px #d8bfa7, -6px -6px 12px #ffe5c5;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+}
+
+.profile {
+  background-color: #fff8ee;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: inset 4px 4px 8px #e0c6a8, inset -4px -4px 8px #fff2d6;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.profile-picture img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 6px solid #f2d8b3;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  object-fit: cover;
+  background: #fff;
+}
+
+.about-me {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.external-button {
+  background-color: #157aff;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+  bottom: -5%;
+}
+
+.external-button:hover {
+  background-color: #479dff;
+}
+
+.footer {
+  margin-top: 8.5rem;
+  background-color: #685b45;
+  color: #fde4e4;
+  padding: 1.5rem 55rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 6px 6px 12px #d8bfa7, -6px -6px 12px #ffe5c5;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 35vh;
+  box-sizing: border-box;
+  margin-bottom: 10%;
+}
+
+.skill-card {
+  background-color: #fff8ee;
+  padding: 1.2rem 1rem;
+  border-radius: 18px;
+  width: 160px;
+  min-height: 120px;
+  text-align: center;
+  box-shadow: 4px 4px 10px #e0c6a8, -4px -4px 10px #fff2d6;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 3s ease-in-out;
+}
+
+.skill-card:hover {
+transform: scale(105%);
+  box-shadow: 8px 8px 18px #d8bfa7, -8px -8px 18px #ffe5c5;
+}
+
+.highight-about{
+    font-size: 130%;
+    font-weight: 900;
+    font-family:monospace;
+}
+
+.skill-text{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 2s ease-in-out;
+}
+
+.skill-text:hover{
+    font-size: 110%;
+}
+
+.skill-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #a86b32;
+  margin-bottom: 0.5rem;
+}
+
+.skill-description {
+  margin-top: 0.25rem;
+  font-size: 0.97rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .skills-section {
+    gap: 1rem;
+    justify-content: center;
+  }
+  .skill-card {
+    width: 130px;
+    min-height: 100px;
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .skill-card {
+    width: 90vw;
+    max-width: 350px;
+  }
+}
+
+/* === SPLIT PROFILE LAYOUT === */
+.profile-layout {
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+  width: 100%;
+  max-width: 1600px;
+  margin: 3rem auto;
+  background-color: #fffaf0;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px #d8bfa7, -6px -6px 12px #ffe5c5;
+  overflow: hidden;
+  align-items: flex-start;
+}
+
+.profile-left {
+  flex: 0 0 320px;
+  background-color: #f8e7d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  min-width: 200px;
+  max-width: 360px;
+  height: 105%;
+}
+
+.profile-picture-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-picture {
+  padding: 1rem; 
+  width: 192vh;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #fff3e0;
+  box-shadow: 6px 6px 14px #d8bfa7, -6px -6px 14px #ffe5c5;
+}
+
+.profile-right {
+    height: 100%;
+  flex: 2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-right > * {
+  margin-bottom: 1.5rem;
+}
