@@ -1,13 +1,20 @@
 const AboutMe = () => {
   return (
-    <div className="about-me">
+    <section className="about-me">
       <p>
-        <span className="highight-about">Hi! I'm <strong>Panimdim, Joselito</strong></span>, a 22-year-old male and currently a 3rd-year college student at Cordova Public College (CPC).
-        I'm passionate about learning and continuously striving to improve myself every day.
-        My goal is to finish my degree and build a successful future in the tech industry.
-        I believe in working hard, staying focused, and never giving up on my dreams.
+        <span className="highight-about">Hi! I'm <strong>Panimdim, Joselito</strong>,</span>
+        {' '}a passionate 22-year-old developer and 3rd-year student at Cordova Public College. 
+        I'm dedicated to continuous learning and building innovative solutions in tech.
       </p>
-    </div>
+      <p>
+        <strong>My Focus:</strong> Full-stack development with React, JavaScript, and modern web technologies. 
+        I'm driven by curiosity, attention to detail, and a commitment to delivering quality code.
+      </p>
+      <p>
+        <strong>My Goal:</strong> Finish my degree and establish a successful career in tech, 
+        creating impactful applications that solve real-world problems.
+      </p>
+    </section>
   );
 };
 

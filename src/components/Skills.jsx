@@ -25,23 +25,62 @@ const skillsData = [
 
 const Skills = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const handleCardClick = (index) => {
+    setSelectedIndex(index);
+  };
+
+  const closeModal = () => {
+    setSelectedIndex(null);
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
 
   return (
-    <div className="skills-section">
-      {skillsData.map((skill, index) => (
-        <div
-          key={index}
-          className="skill-card"
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <h3 className='skill-text'>{skill.name}</h3>
-          {hoveredIndex === index && (
-            <p className="skill-description">{skill.description}</p>
-          )}
+    <section className="skills-container">
+      <h2 className="skills-title">Core Competencies</h2>
+      <div className="skills-section">
+        {skillsData.map((skill, index) => (
+          <div
+            key={index}
+            className="skill-card"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            onClick={() => handleCardClick(index)}
+            role="button"
+            tabIndex={0}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                handleCardClick(index);
+              }
+            }}
+          >
+            <h3 className='skill-text'>{skill.name}</h3>
+            {hoveredIndex === index && (
+              <p className="skill-description">{skill.description}</p>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Modal */}
+      {selectedIndex !== null && (
+        <div className="skill-modal-backdrop" onClick={handleBackdropClick}>
+          <div className="skill-modal">
+            <button className="modal-close" onClick={closeModal}>
+              ✕
+            </button>
+            <h2 className="modal-title">{skillsData[selectedIndex].name}</h2>
+            <p className="modal-description">{skillsData[selectedIndex].description}</p>
+          </div>
         </div>
-      ))}
-    </div>
+      )}
+    </section>
   );
 };
 
